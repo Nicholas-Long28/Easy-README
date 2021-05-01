@@ -1,14 +1,25 @@
 {
-  "name": "static-site",
+  "name": "inquirer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Asks questions to develop readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Nicholas Long",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^6.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicholas-Long28/Easy-README.git"
+  },
+  "keywords": [
+    "Readme"
+  ],
+  "bugs": {
+    "url": "https://github.com/Nicholas-Long28/Easy-README/issues"
+  },
+  "homepage": "https://github.com/Nicholas-Long28/Easy-README#readme"
 }
