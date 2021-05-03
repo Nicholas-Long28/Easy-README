@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/Nicholas-Long28/Easy-README/issues"
   },
-  "homepage": "https://github.com/Nicholas-Long28/Easy-README#readme"
+  "homepage": "https://github.com/Nicholas-Long28/Easy-README#readme",
+  "devDependencies": {}
 }
