@@ -44,9 +44,5 @@ function generateReadme(answers) {
   _This README was generated with ❤️ by [README-generator](https://github.com/jpd61/README-generator) 🔥🔥🔥_
       `;
     }
-    
-    module.exports = generateReadme;
-`;
-}
 
 module.exports = generateMarkdown;
