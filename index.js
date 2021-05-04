@@ -6,8 +6,8 @@ const generateREADME = require('./utils/generateMarkdown.js');
 const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
-const promptUser = () => {
-    return inquirer.prompt([
+inquirer
+    .prompt([
         {
             type: 'input',
             name: 'title',
@@ -54,16 +54,60 @@ const promptUser = () => {
             message: 'What kind of license should your project have?',
             choices: ['MIT License', 'GPL License', 'Apache License', 'GNU License', 'N/A']
         }
-    ]);
-}
-    // TODO: Create a function to write README file
 
+    ]);
+
+// TODO: Create a function to write README file
+function generateMarkdown(response) {
+    return `
+# ${response.title}
+
+# Table of Contents
+- [Title](#title)
+- [Github](#github)
+- [Email](email)
+- [Description](#description)
+- [Installation](#installation)
+- [Use](#use)
+- [Test](#test)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Title:
+        ${response.title}
+
+## Github:
+        ${response.Github}
+
+## Email:
+        ${response.email}
+    
+## Description:
+        ${response.description}
+
+## Installation:
+        ${response.install}
+
+## Use:
+        ${response.use}
+
+## Test:
+        ${response.test}
+    
+## Contributing:
+        ${response.contributing}
+    
+## License:
+    ![License](https://img.shields.io/badge/license-${answers.license}-brightgreen)
+        ${response.license}
+`;
+}
 // TODO: Create a function to initialize app
-    async function init() {
+async function init() {
         try {
             const answers = await promptUser();
             const generateContent = generateREADME(answers);
-            await writeFileAsync('./dust/README.md', generateContent);
+            then((answers) => writeFileAsync('README.md', generateREADME(answers)));
             console.log('Successfully wrote to README.md');
         } catch(err) {
             console.log(err);
@@ -73,9 +117,9 @@ const promptUser = () => {
 // Function call to initialize app
 /*const init = () => {
     promptUser()
-    .then((answers) => writeFileAsync('Readme.md', generateREADME(answers)))
-    .then(() => console.log('Successfully wrote to README.md'))
-    .catch((err) => console.error(err));
+        .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
+        .then(() => console.log('Successfully wrote to README.md'))
+        .catch((err) => console.error(err));
 };
-*/
-init();
+
+init();*/
