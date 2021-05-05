@@ -117,6 +117,7 @@ async function init() {
         const answers = await promptUser();
         console.log('Inquirer Answers', answers);
         const generateContent = generateREADME(answers);
+        writeToFile(`README.md`, generateContent)
         console.log('Successfully wrote to README.md');
     } catch(err) {
         console.log(err);
